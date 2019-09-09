@@ -1,0 +1,8 @@
+pogledati box-sizing
+pogledatli background position?
+    ako stavimo da je backposition recimo bottom ili center, onda 
+    je bottom ili center zakucano, tako da kad resizeujemo oni se ne odsecaju
+
+za setovanje gradijenta koristimo isto background-image
+
+Clip-path za odsecanje slike po proizvoljnom poligonu
