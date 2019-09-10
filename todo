@@ -12,3 +12,14 @@ propertiji menjaju, dobijamo animacije.
 
 Ali mozemo isa keyframes da isto imamo animaciju. Za browser je optimalno da imamo 2 propertija koji se animiraju
 opacity i transform, ali u transformu mozemo hru stvari da ubacimo.
+ako hocemo da stavimo 2 stvari u header, ali da budu u odvojenim redovima
+mozemo da ih stavimo u 2 zasebna spana, a onda span-u da damo klasu
+display: block;
+
+Pozicioniranje aboslutno vrsi se u odnosu na parenta koji je relativno
+Pozicioniran.
+
+Da bismo centrirali neki sadrzaj i vertikalno i horizontalno
+radimosledece: poziioniramo ga aboslutno 50%, 50% i onda radimo
+translate: -50%, -50%, time dobijamo da se ce element vrati unazad
+za pola svoje duzine i sirine.
