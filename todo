@@ -6,3 +6,9 @@ pogledatli background position?
 za setovanje gradijenta koristimo isto background-image
 
 Clip-path za odsecanje slike po proizvoljnom poligonu
+
+2 nacina za animacije: prvi je da uradimo transition nekih propertija, i onda se, kad se ti 
+propertiji menjaju, dobijamo animacije.
+
+Ali mozemo isa keyframes da isto imamo animaciju. Za browser je optimalno da imamo 2 propertija koji se animiraju
+opacity i transform, ali u transformu mozemo hru stvari da ubacimo.

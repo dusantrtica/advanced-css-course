@@ -43,7 +43,11 @@ body {
 }
 
 .logo {
-    height: 35px; /* width will be fixed automatically */    
+    height: 35px; /* width will be fixed automatically */        
+}
+
+.logo:hover {
+    animation: rotation 0.5s;
 }
 
 .text-box {
@@ -51,11 +55,17 @@ body {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
+
+    /* ovo je fix za shaking koji se desava iz nepoznatog razloga na kraju animacije, mozda i nije potrebno. */
+    backface-visibility: hidden;
+
+    margin-bottom: 15px;
 }
 
 .heading-primary-main {
@@ -63,6 +73,7 @@ body {
    font-size: 60px;
    font-weight: 400;
    letter-spacing: 35px;
+   animation: moveInLeft 1s ease-out;   
 }
 
 .heading-primary-sub {
@@ -70,4 +81,81 @@ body {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+    animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px)
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px)
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* link pseudo class, state of an element */
+/* da je ostao kao inline element, onda bi zauzimao mesta 
+teksta koji je iznad, i zato moramo da ga stavimo kao block
+uvek, ako hocemo da dajemo neke margine ili paddinge elementu treba da ga
+deklarisemo kao block ili inline-block, inace naraste preko gornjeg elementa.
+Da bismo stavili ga stavili u centar, mozemo raditi kao postion absolute i transform, ali
+to je over kill, umesto toga, posto je block inline element, mozemo sa
+text align center da to postignemo*/
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+
+/* ovo je kad kliknemo */
+.btn:active {
+    transform: translateY(-1px); 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.btn-white {
+    background-color: #fff;
+
 }
