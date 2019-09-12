@@ -23,3 +23,6 @@ Da bismo centrirali neki sadrzaj i vertikalno i horizontalno
 radimosledece: poziioniramo ga aboslutno 50%, 50% i onda radimo
 translate: -50%, -50%, time dobijamo da se ce element vrati unazad
 za pola svoje duzine i sirine.
+
+Kod animacija sa transition propertijem, transition se stavlja na inicijalno
+stanje. To je nekad izvor konfuzije, ali tako jednostavno jeste.

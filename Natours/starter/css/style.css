@@ -116,6 +116,7 @@ body {
     }
 }
 
+/* ovo je samo zabave radi, ne treba nam za ovaj projekat*/
 @keyframes rotation {
     0% {
         transform: rotate(0deg);
@@ -123,6 +124,22 @@ body {
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+
+    80% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -142,6 +159,8 @@ text align center da to postignemo*/
     display: inline-block;
     border-radius: 100px;
     transition: all .2s;
+    position: relative; /* ovo nam treba da bismo :after element
+    pozicionirali iza dugmeta tj. da se ne vidi*/    
 }
 
 .btn:hover {
@@ -157,5 +176,41 @@ text align center da to postignemo*/
 
 .btn-white {
     background-color: #fff;
+    color: #777;
+}
 
+/* Pseudo element je se tretira kao child elementa. Hocemo 
+da se ovaj after pokaze tacno iza dugmeta. A to postizemo tako sto imamo after.
+koji izgleda isto kao dugme. zauzima celu povrsinu elementa, sa 100% w/h
+Da bismo ga stavili tacno iza dugmeta, to moramo da pozicioniramo apsolutno
+*/
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;    
+}
+
+/*Strava fora za strafa efekat! Kao raste dugme ali u isto vreme
+nestaje, pa dobijamo jako lep efekat*/
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+    /* ovde nam treba, da bi inicijalno primenio stil koji animacija ima
+    na 0% pre nego sto animacija pocne, a to je opacity:0 itd. */
 }
