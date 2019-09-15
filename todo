@@ -26,3 +26,60 @@ za pola svoje duzine i sirine.
 
 Kod animacija sa transition propertijem, transition se stavlja na inicijalno
 stanje. To je nekad izvor konfuzije, ali tako jednostavno jeste.
+
+Specificity je zaista vazan koncept. To se odnosi i na pseudo klase, tipa :hover - ako je i :hover prekriven nekim Specificityjem,
+nece se promeniti klasa
+
+Sto se tice width-a u procentima to se odnosi na parenta, tj. 50% je sirina u odnosu na parent-a.
+
+Imamo declared value, ono sto deklarisemo, onda imamo
+cascaded (nakon evaluacije i razresenja konflikta), pa specified value (default)
+computed value i used value i actual value - zaokruena vrednost
+
+16px je defaultni font size za browser
+
+REM - relativno u odnosu na unit
+
+Font size - ako je u procentima, onda to znaci npr. 150% od parentovog font size-a.
+Za paddinge, margine, procenti znace procenti parentovoe sirine.
+
+font-size: 3em, je 3 puta velicina fonta parenta.
+padding: 2em - je 2 * velicina fonta TOG elementa
+REM, EM se mogu koristiti za paddinge margine ali i fontonve.
+Za fontove, referentna tacka je font size parenta, a za length, referenca je TAJ element
+Za REM je uvek referenca font size ROOT-a.
+
+1vh i 1vw - to je 1% od viewport height, width. 90vh, je 90% visine viewporta
+
+Kod nasledjivanja, nasledjuje se computed value, a ne declared value. recimo ako je declared value, 150%, onda 
+ono sto se nasledjuje jeste 150% od parent velicine recimo i da izracunata vrednost se nasledjuje.
+
+treba stavti velicinu elemenata u rem-ovima. Ali inicjalni font size ne treba stavljati u px, jer
+je problem u tome sto onda ako korisnik promeni velicinu fonta u browseru
+nas font-size definisan u html {} selektoru, ostaje 10px i to onda narusava izled sajta - font je uvecan, ali proporocije i sve velicine
+u nasem sajtu su kao da je 10px. Umesto toga, root font size se definise u procentima, to je onda
+velicina fonta koja dolazi od browsera.
+
+REM nije podrzan ispod IE 9
+
+box-sizing, border-box - znaci da kad damo width i height, to je sirina i visina celog elementa 
+ukljucujuci padding i border., to takodje znaci da kad damo w/h i kad poveceavamo padding, to onda
+smanjuje inner area. To se naravno odnosi na block level boxes, tj na blok elemente.
+Type of the box je display property. (display: block)
+display: block, defaultna vrednost za neke elemente., block level
+zauzima 100% sirine parenta i kreira line breaks pre i posle sebe.
+
+block:inline, su elementi kojima se ne ne setuje sirina i visina, nego im je dimenzija uslovljena dimenzijom contenta, ne kreira se novi red,
+margine i padding moze samo horizontalno
+
+imamo inline-block koji nadoknadjuje nedostatke inline elementa., nema line breaks, zauzima samo
+sirinu i visinu kontenta
+
+Pozicioniranje: normal flow, floats, i position: absolute.
+Normal flow, elementi se redjaju redom, kako su navedeni.
+
+floats - element se kompletno uzima iz redosleda elemenata i pomera se skroz
+levo ili desno sve dok ne dotakne ivicu kontejnera
+ ili drugi float element
+
+ Stacking context - z-index, ali i opacity takodje kreira stacking context
