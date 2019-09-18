@@ -83,3 +83,7 @@ levo ili desno sve dok ne dotakne ivicu kontejnera
  ili drugi float element
 
  Stacking context - z-index, ali i opacity takodje kreira stacking context
+
+ BEM - block, element modifier. Element ne postoji van konteksta bloka.
+ 7-1 pattern za CSS - 7 different folders za sass and 1 main sass file to improt all other files.
+ base/, components/ layout/ pages/ themes/ abstracts/ vendors/
