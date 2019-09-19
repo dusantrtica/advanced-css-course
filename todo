@@ -84,6 +84,11 @@ levo ili desno sve dok ne dotakne ivicu kontejnera
 
  Stacking context - z-index, ali i opacity takodje kreira stacking context
 
+<<<<<<< HEAD
  BEM - block, element modifier. Element ne postoji van konteksta bloka.
  7-1 pattern za CSS - 7 different folders za sass and 1 main sass file to improt all other files.
  base/, components/ layout/ pages/ themes/ abstracts/ vendors/
+=======
+ BEM - block je reusabilna komponenta, neka sekcija ili dugme
+ blokovi mogu da budu ugnjezdeni
+>>>>>>> todo updated
