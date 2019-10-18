@@ -1,0 +1,9 @@
+3 principa responsive dizajna:
+1. media query
+2. fluid grids and layouts
+3. flexible images
+
+3 nacina za fluid layouts:
+floats layouts, flexbox, css grid
+
+grid je design system
