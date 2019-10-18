@@ -1,0 +1,22 @@
+/*
+box-sizing nije property koji se nasledjuje (?), ali ovako mi ga setujemo na html i onda kazmo preko
+* selektora da svi elementi treba da naslede ovaj property.
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* root font size se stavlja u procentima, zbog toga sto korisnik moze da promeni velicinu fonta u browseru.
+Ako bismo zakucali na 10px, onda promena fonta u browseru, ce ispravno da skalira ostale elemente*/
+html {
+  // this defines what 1rem is
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}

@@ -1,0 +1,74 @@
+/* link pseudo class, state of an element */
+/* da je ostao kao inline element, onda bi zauzimao mesta 
+teksta koji je iznad, i zato moramo da ga stavimo kao block
+uvek, ako hocemo da dajemo neke margine ili paddinge elementu treba da ga
+deklarisemo kao block ili inline-block, inace naraste preko gornjeg elementa.
+Da bismo stavili ga stavili u centar, mozemo raditi kao postion absolute i transform, ali
+to je over kill, umesto toga, posto je block inline element, mozemo sa
+text align center da to postignemo*/
+
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative; // ovo nam treba da bismo :after element
+    //pozicionirali iza dugmeta tj. da se ne vidi*/
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    /*Strava fora za strafa efekat! Kao raste dugme ali u isto vreme
+    nestaje, pa dobijamo jako lep efekat*/
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  /* ovo je kad kliknemo */
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: #777;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  /* Pseudo element je se tretira kao child elementa. Hocemo 
+da se ovaj after pokaze tacno iza dugmeta. A to postizemo tako sto imamo after.
+koji izgleda isto kao dugme. zauzima celu povrsinu elementa, sa 100% w/h
+Da bismo ga stavili tacno iza dugmeta, to moramo da pozicioniramo apsolutno
+*/
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+    /* ovde nam treba, da bi inicijalno primenio stil koji animacija ima
+    na 0% pre nego sto animacija pocne, a to je opacity:0 itd. */
+  }
+}

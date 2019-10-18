@@ -1,0 +1,36 @@
+/* 95% velicine viewporta*/
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url('../img/hero.jpg');
+  background-size: cover; /* da bude slika skalirana i da zauzima celu povrsinu*/
+  background-position: top; /* da prilepimo sliku iz vrh stranice. tako da je bottom odsecena ako treba da se odsece*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem; /* width will be fixed automatically */
+  }
+
+  &__logo:hover {
+    animation: rotation 0.5s;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
