@@ -1,0 +1,46 @@
+.composition {
+  position: relative;
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    border-radius: 2px;
+
+    // hocemo da bude jedna preko druge slike, i zato moramo da ih pozicioniramo apsolutno.
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 2rem; // to je da bismo dobili prazninu izmedju outline-a i slike
+
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover {
+      // hocemo da imamo border ali sa prazninom izmedju slike i bordera ,zato korisimo
+      // outline a ne border
+      outline: 1.5rem solid $color-primary;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+      z-index: 20;
+    }
+  }
+
+  /*
+  ove hocemo da ostale slike, koje su u toj sekciji, akoje nisu hoverovane da odzumiramo. Znaci sve ostale umanjimo, a onu na kojoj
+  smo trenutno, hocemo da hoverujemo (to je iznad postignuto)!
+  */
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
+}
