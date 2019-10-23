@@ -7,3 +7,5 @@
 floats layouts, flexbox, css grid
 
 grid je design system
+
+i -element je sad konvencija za ikonu. i  nije ikonica, to je bio italic u prethodnoj verziji html-a.
