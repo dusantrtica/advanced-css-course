@@ -257,6 +257,39 @@ Da bismo ga stavili tacno iza dugmeta, to moramo da pozicioniramo apsolutno
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
 
+/*
+perspective se definise na parentu!, zato imamo card__side
+*/
+.card {
+  position: relative;
+  perspective: 150rem;
+  /*
+  Stavljamo height 50, jer zbog toga sto je __side pozicioniram apsolutno
+  izgubio je heigth a on nam je potreban inace perspective nece raditi
+  */
+  height: 50rem;
+  -moz-perspective: 150rem; }
+  .card__side {
+    height: 50rem;
+    transition: all 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+  .card:hover .card__side--front {
+    transform: rotateY(180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0deg); }
+
 /* 95% velicine viewporta*/
 .header {
   position: relative;
@@ -332,3 +365,8 @@ su 0.
   transform: skewY(-7deg); }
   .section-features > * {
     transform: skewY(7deg); }
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 50rem 0;
+  margin-top: -10rem; }
