@@ -47,13 +47,22 @@ text align center da to postignemo*/
     }
   }
 
+  &--green {
+    background-color: $color-primary-light;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary-light;
+    }
+  }
+
   /* Pseudo element je se tretira kao child elementa. Hocemo 
 da se ovaj after pokaze tacno iza dugmeta. A to postizemo tako sto imamo after.
 koji izgleda isto kao dugme. zauzima celu povrsinu elementa, sa 100% w/h
 Da bismo ga stavili tacno iza dugmeta, to moramo da pozicioniramo apsolutno
 */
   &::after {
-    content: '';
+    content: "";
     display: inline-block;
     height: 100%;
     width: 100%;
