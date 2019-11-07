@@ -1,0 +1,19 @@
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  overflow: hidden;
+
+  // hocemo da video zauzme celu sekciju, zato koristimo object-fit
+  // object-fit je kao i background-color, samo sto object fit radi sa raznim HTML elementima, ne samo sa
+  // slikama
+  &__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; // slicno sa background-size:cover, samo ovo sto radi  za svim html elementima
+  }
+}
