@@ -8,6 +8,7 @@ to je over kill, umesto toga, posto je block inline element, mozemo sa
 text align center da to postignemo*/
 
 .btn {
+  &, // to je ce bude samo dugme
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -18,6 +19,10 @@ text align center da to postignemo*/
     transition: all 0.2s;
     position: relative; // ovo nam treba da bismo :after element
     //pozicionirali iza dugmeta tj. da se ne vidi*/
+
+    // Change for the <button> element
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -33,7 +38,9 @@ text align center da to postignemo*/
   }
 
   /* ovo je kad kliknemo */
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-0.1rem);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
@@ -62,7 +69,7 @@ koji izgleda isto kao dugme. zauzima celu povrsinu elementa, sa 100% w/h
 Da bismo ga stavili tacno iza dugmeta, to moramo da pozicioniramo apsolutno
 */
   &::after {
-    content: "";
+    content: '';
     display: inline-block;
     height: 100%;
     width: 100%;
