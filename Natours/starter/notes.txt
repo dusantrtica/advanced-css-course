@@ -12,3 +12,7 @@ i -element je sad konvencija za ikonu. i  nije ikonica, to je bio italic u preth
 
 u CSSu je nemoguce stilizovati radio dugmice, fora je da se onda stavi input type = radio, pa onda u labeli
 da se stavi span, i das e onda input sakrije
+
+display: none - ne, jer ne mozemo da animiramo.
+nego se radi: opacity: 0, visibility:hidden i onda mozemo da animiramo, jer
+je content u DOM-u
