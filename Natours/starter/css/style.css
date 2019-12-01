@@ -1,4 +1,18 @@
 /*
+* 0 - 600px         Phone
+  600 - 900px;      Tablet portrait mode
+  900 - 1200px      Tablet landscape
+  [1200 - 1800] is where our normal styles apply
+  1800px +          Big desktop
+*/
+/* @include respond-phone { font-size: 50%; }
+taj blok koda ce da bude 'nalepljen' u @media (max-width:600px) {...}
+*/
+/*
+$breakpoint argument choices
+-phone, tab-p
+*/
+/*
 COLORS:
 
 Light green: #7ed56f
@@ -58,6 +72,18 @@ box-sizing nije property koji se nasledjuje (?), ali ovako mi ga setujemo na htm
 Ako bismo zakucali na 10px, onda promena fonta u browseru, ce ispravno da skalira ostale elemente*/
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
@@ -647,7 +673,7 @@ perspective se definise na parentu!, zato imamo card__side
   .row:not(:last-child) {
     margin-bottom: 8rem; }
   .row::after {
-    content: '';
+    content: "";
     display: table;
     clear: both; }
   .row [class^="col"] {

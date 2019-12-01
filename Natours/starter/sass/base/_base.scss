@@ -14,7 +14,28 @@ box-sizing nije property koji se nasledjuje (?), ali ovako mi ga setujemo na htm
 Ako bismo zakucali na 10px, onda promena fonta u browseru, ce ispravno da skalira ostale elemente*/
 html {
   // this defines what 1rem is
-  font-size: 62.5%;
+  font-size: 62.5%; // 10px at default viewport view 10px/16px = 62.5%
+
+  // @media (max-width: 600px) {
+  //   font-size: 50%;
+  // }
+
+  // @include respond-phone {
+  //   font-size: 50%;
+  // }
+
+  @include respond(tab-land) {
+    // width < 1200
+    font-size: 56.25%; // 1rem = 9px, 9/16 = 50%
+  }
+  @include respond(tab-port) {
+    // width < 9  00
+    font-size: 50%; // we want 1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
 }
 
 body {

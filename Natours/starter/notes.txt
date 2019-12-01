@@ -16,3 +16,11 @@ da se stavi span, i das e onda input sakrije
 display: none - ne, jer ne mozemo da animiramo.
 nego se radi: opacity: 0, visibility:hidden i onda mozemo da animiramo, jer
 je content u DOM-u
+
+rem and ems nisu podlozne uticaju promene root font size 
+html { font-size: 10} - to ne utice na rem i em
+1rem 1em je font-size koji je definisan u browseru a to je 16px. Ako korisnik
+promeni default font na 20px, to ce biti rem i em, bez obzira na to sta imamo
+za base definition font size-a (html { fontsize: 1212px})
+em koristiom u medija query-ju jer REM ne radi kako treba u nekim browserima
+1em = 16px
