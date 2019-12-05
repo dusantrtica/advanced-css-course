@@ -24,3 +24,5 @@ promeni default font na 20px, to ce biti rem i em, bez obzira na to sta imamo
 za base definition font size-a (html { fontsize: 1212px})
 em koristiom u medija query-ju jer REM ne radi kako treba u nekim browserima
 1em = 16px
+
+sizzy.co kako nam stranica izgleda
