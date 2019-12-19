@@ -11,6 +11,13 @@
   visibility: hidden;
   transition: all 0.3s;
 
+  /* graceful degradation*/
+  @supports (-webkit-backdrop-filter: blur(10px)) or
+    (backdrop-filter: blur(10px)) {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
   &:target {
     opacity: 1;
     visibility: visible;

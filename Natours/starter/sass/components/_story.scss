@@ -36,11 +36,19 @@
     // shape-outside:  definise kako se content pozicionira oko elementa
     // a taj element definisemo sami sa circle ili necim drugim.;
     shape-outside: circle(50% at 50% 50%);
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
     @include respond(phone) {
       transform: translateX(-3rem) skewX(0);
+    }
+
+    overflow: hidden;
+
+    @supports (clip-path: polygon(0 0)) or
+      (-webkit-clip-path: polygon(0 0)) {
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      height: 15rem;
+      width: 15rem;
     }
   }
 
