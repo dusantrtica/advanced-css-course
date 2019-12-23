@@ -173,7 +173,12 @@ perspective se definise na parentu!, zato imamo card__side
     font-weight: 100;
   }
 
-  @include respond(tab-port) {
+  // @include respond(tab-port) {
+  // Ovde hocemo da kazemo ako uredjaj nema hover opciju, tj. touch uredjaji ne mogu da
+  // hoveruju, za njih imamo prikazivanje kartice sa dugmetom.
+  // To isputujemo sa hover: none ili hover: hover
+  @media only screen and (max-width: 56.25em),
+    only screen and (hover: none) {
     height: auto;
     border-radius: 3px;
     background-color: $color-white;
