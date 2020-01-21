@@ -1,0 +1,5 @@
+Bolje SVG nego icon fonts, icon fonts je vise hack. Iconfonts cesto ne uspe da se ucita.
+Display icons are images using a fonts.
+Screen readers for blind people trying to read icon fonts and fail to do so.
+
+Scalable Vector Graphics. IcoMoon
