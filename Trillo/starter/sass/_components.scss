@@ -2,28 +2,72 @@
 // LOGO
 .logo {
     height: 3.25rem;
+    margin-left: 3rem;
 }
 
 /////////////////////////////////////////
 // SEARCH
 .search {
-    &__input {
+    // search ima input i dugme,40% je za celu sekciju a onda     
+    flex: 0 0 40%;
 
+    // ovim se setuje da je flex item zapravo kontejner jer i u njemo imamo
+    // vise itema  i hocemo da ih uredjuejmo
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__input {
+        font-family: inherit;
+        // on input element it does not inherit zato mora da se setuje
+        font-size: inherit;
+        background-color: var(--color-grey-light-2);
+        border:none;
+        padding: .7rem 2rem;
+        border-radius: 100px;
+        width: 90%;
+        transition: all .2s;
+        margin-right: -3.25rem; // da bi se dugme preklapalo sa inputom
+
+        &:focus {
+            outline: none;
+            width: 100%; // to je 40% zapravo (linja 13)
+            background-color: var(--color-grey-light-3);    
+        }
+
+        &::-webkit-input-placeholder {
+            font-weight: 100;
+            color: var(--color-grey-light-4);
+        }
+    }
+
+    &__input:focus + &__button {
+        background-color: var(--color-grey-light-3);    
     }
 
     &__button {
-    
+        border: none;        
+        background-color: var(--color-grey-light-2);  // da bi izgledalo kao da je dugme deo inputa
+
+        &:focus {
+            outline: none;
+        };
+
+        &:active {
+            transform: translateY(2px);
+        }
     }
 
     &__icon {
         height: 2rem;
         width: 2rem;
+        fill: var(--color-grey-dark-3);
     }
 }
 
 /////////////////////////////////////////
 // USER NAVIGATION
 .user-nav {
+    background-color: greenyellow;
     &__icon-box {
 
     }
