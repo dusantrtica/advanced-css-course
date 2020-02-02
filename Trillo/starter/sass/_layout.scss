@@ -1,34 +1,38 @@
 .container {
-    // ako je ekran manji od 1200px, onda ce da zauzme celu sirinu ekrana
-    max-width: 120rem; // 1.200px;
-    margin: 8rem auto;
-    background-color: var(--color-grey-light-2);
-    box-shadow: var(--shadow-dark);
-    min-height:  50rem;
+  // ako je ekran manji od 1200px, onda ce da zauzme celu sirinu ekrana
+  max-width: 120rem; // 1.200px;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-2);
+  box-shadow: var(--shadow-dark);
+  min-height: 50rem;
 }
 
 .header {
-    height: 7rem;
-    background-color: #fff;
-    border-bottom: var(--color-grey-light-2);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.4rem; // 14px
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: var(--color-grey-light-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem; // 14px
 }
 
 .content {
-    display: flex;
+  display: flex;
 }
 
 .sidebar {
-    background-color: var(--color-grey-dark-1);
+  background-color: var(--color-grey-dark-1);
 
-    flex: 0 0 18%; // don't grow, don't shrink, and set width
+  flex: 0 0 18%; // don't grow, don't shrink, and set width
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hotel-view {
-    background-color: #fff;
-    background-color: orangered;
-    flex: 1; // grow as much as you can - to occupy the remaining space.
+  background-color: #fff;
+  background-color: orangered;
+  flex: 1; // grow as much as you can - to occupy the remaining space.
+  height: 80rem; // testing purposes, to simulate large content
 }
