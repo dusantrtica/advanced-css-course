@@ -46,7 +46,9 @@
 
   &__button {
     border: none;
-    background-color: var(--color-grey-light-2); // da bi izgledalo kao da je dugme deo inputa
+    background-color: var(
+      --color-grey-light-2
+    ); // da bi izgledalo kao da je dugme deo inputa
 
     &:focus {
       outline: none;
@@ -138,7 +140,7 @@
 
   // to ce da raste na hover
   &__item::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -146,7 +148,8 @@
     width: 3px;
     background-color: var(--color-primary);
     transform: scaleY(0);
-    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+      background-color 0.1s;
   }
 
   &__item:hover::before,
@@ -200,8 +203,8 @@
 // Overview
 .overview {
   display: flex;
-  align-items: center; 
-  border-bottom: 1px solid var(--color-grey-light-2);
+  align-items: center;
+  border-bottom: var(--line);
   &__heading {
     font-size: 2.25rem;
     font-weight: 300;
@@ -220,24 +223,24 @@
     display: flex;
     // ovo radimo da bismo sklonili belinu ispod zvezdica.
     // tako sto stavimo flex na parenta, a onda su 'deca', flex items pa ta belina nesane.
-    // Inace, pojavila se jer svg je inline element    
+    // Inace, pojavila se jer svg je inline element
   }
 
-  &__icon-star, &__icon-location {
+  &__icon-star,
+  &__icon-location {
     height: 1.75rem;
     width: 1.75rem;
     fill: var(--color-primary);
   }
 
-
-  &__location {    
+  &__location {
     font-size: 1.2rem;
     display: flex;
     vertical-align: center;
   }
 
   &__icon-location {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
 
   &__rating {
@@ -257,7 +260,7 @@
     margin-bottom: -3px;
   }
   &__rating-count {
-    font-size: .8rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
   }
 }
@@ -272,7 +275,7 @@
   display: inline-block;
   background-color: transparent;
   cursor: pointer;
-  transition: all .2s;
+  transition: all 0.2s;
 
   &:hover {
     color: var(--color-grey-dark-1);
