@@ -303,3 +303,77 @@
     box-shadow: none;
   }
 }
+
+///////////////////////////////////////
+// Paragraph
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+///////////////////////////////////////
+// List
+.list {
+  margin: 3rem 0;
+  list-style: none;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%; // da bismo dobili 2 itema u jednom redu
+    // dakle, nemoj rasti, nemoj se skupljati i uzmi pola prostora
+    margin-bottom: 0.7rem;
+  }
+
+  // ukljucujemo ikonicu ispred list item-a
+  // mora height i width. Problem je sto hocemo drugu boju
+  &__item::before {
+    content: '';
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.7rem;
+
+    // Older browsers
+    // background-image: url('../img/chevron-thin-right.svg');
+    // background-size: cover;
+
+    // Newer browsers - masks
+    background-color: var(--color-primary);
+    -webkit-mask-image: url('../img/chevron-thin-right.svg');
+    -webkit-mask-size: cover;
+    mask-image: url('../img/chevron-thin-right.svg');
+    mask-size: cover;
+  }
+}
+
+///////////////////////////////////////
+// Recommend
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  display: flex;
+  align-items: center;
+
+  &__count {
+    margin-right: auto;
+  }
+
+  &__friends {
+  }
+
+  &__photo {
+    box-sizing: content-box; // border bi nam inace smanjio slike, a mi to ne zelimo
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 3px solid #fff;
+
+    &:not(:last-child) {
+      margin-right: -1.5rem;
+    }
+  }
+}
