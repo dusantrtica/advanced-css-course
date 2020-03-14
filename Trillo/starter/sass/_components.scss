@@ -46,9 +46,7 @@
 
   &__button {
     border: none;
-    background-color: var(
-      --color-grey-light-2
-    ); // da bi izgledalo kao da je dugme deo inputa
+    background-color: var(--color-grey-light-2); // da bi izgledalo kao da je dugme deo inputa
 
     &:focus {
       outline: none;
@@ -133,18 +131,28 @@
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3.5rem;
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    margin: 0;
+  }
 
   &__item {
     position: relative;
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+      @media only screen and (max-width: $bp-medium) {
+        margin: 0;
+      }
+    }
+    @media only screen and (max-width: $bp-medium) {
+      flex: 1;
     }
   }
 
   // to ce da raste na hover
   &__item::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -152,8 +160,7 @@
     width: 3px;
     background-color: var(--color-primary);
     transform: scaleY(0);
-    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
-      background-color 0.1s;
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;
   }
 
   &__item:hover::before,
@@ -176,6 +183,10 @@
     z-index: 10;
     display: flex;
     align-items: center; // ? nisam siguran sta radi
+    @media only screen and (max-width: $bp-medium) {
+      justify-content: center;
+      padding: 2rem;
+    }
   }
 
   &__icon {
@@ -193,6 +204,10 @@
   color: var(--color-grey-light-4);
   text-align: center;
   padding: 2.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    display: none;
+  }
 }
 
 // Gallery section
@@ -343,7 +358,7 @@
   // ukljucujemo ikonicu ispred list item-a
   // mora height i width. Problem je sto hocemo drugu boju
   &__item::before {
-    content: '';
+    content: "";
     display: inline-block;
     height: 1rem;
     width: 1rem;
@@ -355,9 +370,9 @@
 
     // Newer browsers - masks
     background-color: var(--color-primary);
-    -webkit-mask-image: url('../img/chevron-thin-right.svg');
+    -webkit-mask-image: url("../img/chevron-thin-right.svg");
     -webkit-mask-size: cover;
-    mask-image: url('../img/chevron-thin-right.svg');
+    mask-image: url("../img/chevron-thin-right.svg");
     mask-size: cover;
   }
 }
@@ -386,7 +401,7 @@
     border: 3px solid #fff;
 
     &:not(:last-child) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
     }
   }
 }
@@ -399,6 +414,11 @@
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden; // da ne bi navodnici izlazili izvan text boxa
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
 
   &__text {
     margin-bottom: 2rem;
@@ -437,7 +457,7 @@
   }
 
   &::before {
-    content: '\201C';
+    content: "\201C";
     position: absolute;
     font-family: sans-serif;
     line-height: 1;
@@ -455,6 +475,10 @@
   padding: 3.5rem 0;
   text-align: center;
 
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2.5rem 0;
+  }
+
   &__book-now {
     font-weight: 300;
     text-transform: uppercase;
@@ -471,11 +495,7 @@
   border-radius: 100px;
   border: none;
   color: #fff;
-  background-image: linear-gradient(
-    to right,
-    var(--color-primary-light),
-    var(--color-primary-dark)
-  );
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
   // moramo da stavimo overflow hidden.
   // span element zapravo preliva izvan dugmeta i zbog toga necemo
   // da se vidi
@@ -502,11 +522,7 @@
   }
 
   &:hover {
-    background-image: linear-gradient(
-      to left,
-      var(--color-primary-light),
-      var(--color-primary-dark)
-    );
+    background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
   }
   &:hover &__visible {
     transform: translateY(100%);
