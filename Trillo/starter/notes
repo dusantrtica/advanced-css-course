@@ -5,3 +5,5 @@ Screen readers for blind people trying to read icon fonts and fail to do so.
 Scalable Vector Graphics. IcoMoon
 
 Image treba da bude block ili inlineblock ako ne zelimo whitespace ispod
+
+canIuse - da proverimo sta mozemo da koristimo
