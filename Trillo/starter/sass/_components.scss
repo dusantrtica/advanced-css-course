@@ -16,6 +16,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  // ideja je da search ide ispod na malim ekranima (<500)
+  @media only screen and (max-width: $bp-smallest) {
+    // po defaultu svi imaju order 0, ako stavimo ovo na 1
+    // ici ce na kraj
+    order: 1;
+    // sa ovim dole, postizemo da on ima 100% width cime ce
+    // da dovede to okidanja flex-wrap:wrap i ide u novi red
+    flex: 0 0 100%;
+    background-color: var(--color-grey-light-2);
+  }
+
   &__input {
     font-family: inherit;
     // on input element it does not inherit zato mora da se setuje
@@ -187,6 +199,11 @@
       justify-content: center;
       padding: 2rem;
     }
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      padding: 1.5rem 0.5rem;
+    }
   }
 
   &__icon {
@@ -195,6 +212,12 @@
     margin-right: 2rem;
     fill: currentColor; // color of current or parrent element, to inherit
     // the color
+    @media only screen and (max-width: $bp-small) {
+      margin-bottom: 0.7rem;
+      margin-right: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -230,6 +253,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
 
   &__stars {
@@ -271,16 +299,25 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 1.5rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -3px;
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+    }
   }
   &__rating-count {
     font-size: 0.8rem;
     text-transform: uppercase;
+    @media only screen and (max-width: $bp-small) {
+      font-size: 0.5rem;
+    }
   }
 }
 
